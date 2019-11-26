@@ -570,6 +570,9 @@ func getSelectOptions(prevAllocation *structs.Allocation, preferredNode *structs
 	selectOptions := &SelectOptions{}
 	if prevAllocation != nil {
 		penaltyNodes := make(map[string]struct{})
+
+		// If alloc failed, penalize the node it failed on to encourage
+		// rescheduling on a new node.
 		if prevAllocation.ClientStatus == "failed" {
 			penaltyNodes[prevAllocation.NodeID] = struct{}{}
 		}

@@ -19,6 +19,7 @@ IMPROVEMENTS:
  * cli: Included namespace in output when querying job status [[GH-6912](https://github.com/hashicorp/nomad/issues/6912)]
  * cli: Added option to change the name of the file created by the `nomad init` command [[GH-6520]](https://github.com/hashicorp/nomad/pull/6520)
  * client: Supported AWS EC2 Instance Metadata Service Version 2 (IMDSv2) [[GH-6779](https://github.com/hashicorp/nomad/issues/6779)]
+ * client: Updated consul-template library to v0.24.1 - added support for working with consul connect. Deprecated vault_grace. [[GH-7170](https://github.com/hashicorp/nomad/pull/7170)]
  * consul: Add support for service `canary_meta` [[GH-6690](https://github.com/hashicorp/nomad/pull/6690)]
  * driver/docker: Added a `disable_log_collection` parameter to disable nomad log collection [[GH-6820](https://github.com/hashicorp/nomad/issues/6820)]
  * server: Introduced a `default_scheduler_config` config parameter to seed initial preemption configuration. [[GH-6935](https://github.com/hashicorp/nomad/issues/6935)]

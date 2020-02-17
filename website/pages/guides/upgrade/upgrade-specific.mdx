@@ -38,6 +38,14 @@ process from being passed along into launched tasks. The `CONSUL_HTTP_TOKEN`
 environment variable has been added to the default list. More information can
 be found in the `env.blacklist` [configuration](/docs/configuration/client#inlinecode-envblacklist) .
 
+### client.template: `vault_grace` deprecation
+
+Nomad 0.10.4 includes an update to [consul-template](https://github.com/hashicorp/consul-template) v0.24.1.
+This library deprecates the `vault_grace` option for templating included in nomad.
+The feature has been ignored since vault 0.5 and as long as you are running
+a more recent version of vault, you can safely remove vault_grace from your
+nomad jobs.
+
 ## Nomad 0.10.3
 
 ### mTLS Certificate Validation

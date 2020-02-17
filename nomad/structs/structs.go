@@ -5964,6 +5964,7 @@ type Template struct {
 	// VaultGrace is the grace duration between lease renewal and reacquiring a
 	// secret. If the lease of a secret is less than the grace, a new secret is
 	// acquired.
+	// COMPAT(0.12) VaultGrace has been ignored by Vault since Vault v0.5.
 	VaultGrace time.Duration
 }
 
@@ -6038,8 +6039,8 @@ func (t *Template) Validate() error {
 		}
 	}
 
-	if t.VaultGrace.Nanoseconds() < 0 {
-		multierror.Append(&mErr, fmt.Errorf("Vault grace must be greater than zero: %v < 0", t.VaultGrace))
+	if t.VaultGrace > 0 {
+		multierror.Append(&mErr, fmt.Errorf("VaultGrace has been deprecated as of Nomad 0.11 and ignored since Vault 0.5. Please remove VaultGrace / vault_grace from template stanza."))
 	}
 
 	return mErr.ErrorOrNil()

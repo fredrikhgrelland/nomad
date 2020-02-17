@@ -737,9 +737,6 @@ func (tmpl *Template) Canonicalize() {
 	if tmpl.Envvars == nil {
 		tmpl.Envvars = boolToPtr(false)
 	}
-	if tmpl.VaultGrace == nil {
-		tmpl.VaultGrace = timeToPtr(15 * time.Second)
-	}
 }
 
 type Vault struct {

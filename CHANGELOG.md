@@ -7,6 +7,7 @@ IMPROVEMENTS:
  * client: Updated consul-template to v0.25.0 - config function_blacklist deprecated and replaced with function_denylist [[GH-8988](https://github.com/hashicorp/nomad/pull/8988)]
  * driver/docker: Upgrade pause container and detect architecture [[GH-8957](https://github.com/hashicorp/nomad/pull/8957)]
  * jobspec: Lowered minimum CPU allowed from 10 to 1. [[GH-8996](https://github.com/hashicorp/nomad/issues/8996)]
+ * consul: support for setting a consul namespace in client configuration. [[GH-8849](https://github.com/hashicorp/nomad/pull/8849)]
 
 BUG FIXES:
 

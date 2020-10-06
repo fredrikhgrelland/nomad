@@ -37,7 +37,7 @@ func TestDebugSuccesses(t *testing.T) {
 	srv, _, _ := testServer(t, false, nil)
 	defer srv.Shutdown()
 
-	ui := new(cli.MockUi)
+	ui := cli.NewMockUi()
 	cmd := &OperatorDebugCommand{Meta: Meta{Ui: ui}}
 
 	// NOTE -- duration must be shorter than default 2m to prevent testify from timing out

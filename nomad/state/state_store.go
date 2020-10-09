@@ -2552,7 +2552,7 @@ func (s *StateStore) CSIPluginDenormalize(ws memdb.WatchSet, plug *structs.CSIPl
 		if alloc == nil {
 			continue
 		}
-		plug.Allocations = append(plug.Allocations, alloc.Stub())
+		plug.Allocations = append(plug.Allocations, alloc.Stub(nil))
 	}
 
 	return plug, nil
